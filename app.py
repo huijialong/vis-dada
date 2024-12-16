@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 页面标题
-st.title("CSV文件自动可视化工具")
+st.title("惠哥威武CSV文件自动可视化工具")
 st.write("将您的CSV文件拖拽到这里，即可自动生成图表！")
 
 # 上传文件
