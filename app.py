@@ -3,11 +3,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 页面标题
-st.title("惠哥威武CSV文件自动可视化工具")
-st.write("将您的CSV文件拖拽到这里，即可自动生成图表！")
+st.title("采煤机大部件温度可视化")
+st.write("将您的文件拖拽到这里，即可生成趋势图！")
 
 # 上传文件
-uploaded_file = st.file_uploader("拖拽CSV文件到这里", type=["csv"])
+uploaded_file = st.file_uploader("拖拽文件到这里", type=["csv"])
 
 if uploaded_file:
     # 读取CSV文件
@@ -16,7 +16,7 @@ if uploaded_file:
     st.dataframe(df)
 
     # 选择 X 和 Y 轴
-    st.write("### 选择要可视化的列")
+    st.write("### 选择需要分析的测量数据")
     x_axis = st.selectbox("选择X轴", df.columns, index=0)
     y_axis = st.selectbox("选择Y轴", df.columns, index=1)
 
@@ -30,7 +30,5 @@ if uploaded_file:
     ax.grid()
     st.pyplot(fig)
 
-    st.success("图表生成完毕！")
+    st.success("Done!")
 
-# 说明
-st.info("提示：如果数据格式相似，您可以反复上传不同的文件进行可视化。")
