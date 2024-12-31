@@ -3,10 +3,11 @@ import pandas as pd
 import plotly.express as px
 
 
+
 st.title("采煤机大部件温度可视化")
 
 # 文件上传
-uploaded_file = st.file_uploader("拖拽文件到这里", type=["csv", "xlsx", "txt"])
+uploaded_file = st.file_uploader("拖拽文件到这里", type=["csv"])
 
 if uploaded_file:
     # 确保文件不是 None 后再检查文件名
@@ -52,5 +53,6 @@ if uploaded_file:
     st.write("### 数据统计")
     for y_axis in y_axes:
         st.write(f"{y_axis}: 最大值: {df[y_axis].max()}, 最小值: {df[y_axis].min()}, 平均值: {df[y_axis].mean():.2f}")
+
 
 
